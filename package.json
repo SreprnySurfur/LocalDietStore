@@ -1,0 +1,16 @@
+{
+  "name": "LocalDietStore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SreprnySurfur/LocalDietStore.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12",
+    "prettier": "3.2.5"
+  },
+  "scripts": {},
+  "dependencies": {
+    "json-server": "^1.0.0-beta.0"
+  }
+}
