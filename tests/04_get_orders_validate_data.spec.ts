@@ -37,13 +37,13 @@ test.describe("04 - Orders test cases", () => {
     test("Check debug info, order with date before", async ({}) => {
       if (request[2]._debug === "-1 days diet?") {
         throw new Error(`Test failed because ${request[2]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order with duplicate id", async ({}) => {
       if (request[4]._debug === "duplicate id, data as in order 1") {
         throw new Error(`Test failed because ${request[4]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order duplicate date", async ({}) => {
@@ -67,13 +67,13 @@ test.describe("04 - Orders test cases", () => {
     test("Check debug info, order starting after 30 days", async ({}) => {
       if (request[1]._debug === "starting after 30 days from order date") {
         throw new Error(`Test failed because ${request[1]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order over 30 days", async ({}) => {
       if (request[2]._debug === "order for more that 30 days") {
         throw new Error(`Test failed because ${request[2]._debug}'`);
-      };
+      }
     });
   });
 
@@ -91,25 +91,25 @@ test.describe("04 - Orders test cases", () => {
     test("Check debug info, order non existing diet", async ({}) => {
       if (request[0]._debug === "non-existing diet") {
         throw new Error(`Test failed because ${request[2]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order date non exist", async ({}) => {
       if (request[2]._debug === "end date does not exists") {
         throw new Error(`Test failed because ${request[2]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order same day", async ({}) => {
       if (request[5]._debug === "immediate order? nah! not possible") {
         throw new Error(`Test failed because ${request[5]._debug}'`);
-      };
+      }
     });
 
     test("Check debug info, order duplicate diet", async ({}) => {
       if (request[7]._debug === "nok! same diet ordered second time") {
         throw new Error(`Test failed because ${request[7]._debug}'`);
-      };
+      }
     });
   });
 });

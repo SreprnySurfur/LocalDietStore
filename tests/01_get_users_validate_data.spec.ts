@@ -21,6 +21,17 @@ test.describe("01 - Users test cases", () => {
   });
 
   test("Check duplicate message", async ({}) => {
-    expect(request[3]._debug).toEqual("duplicate ID");
+    if (request[3]._debug === "duplicate ID") {
+      throw new Error(`Test failed because ${request[3]._debug}'`);
+    }
+  });
+
+  test("Check position", async ({}) => {
+    const bilbo = {
+      id: "2",
+      name: "Bilbo Baggins",
+      email: "frodo.baggins@dev.dietly.pl",
+    };
+    expect(request[1]).toStrictEqual(bilbo);
   });
 });

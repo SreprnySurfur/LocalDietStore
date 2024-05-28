@@ -7,8 +7,8 @@ const test = base.extend<MyFixtures>({
 });
 
 test.describe("02 - Caterings test cases", () => {
-  test("test", async ({ cateringService }) => {
-    const test = await cateringService.get();
-    console.log(test);
+  test("Check users length", async ({ cateringService }) => {
+    const getCaterings = await cateringService.get();
+    expect(getCaterings).toHaveLength(3);
   });
 });
