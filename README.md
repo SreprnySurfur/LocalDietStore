@@ -73,7 +73,7 @@ Open Playwright console an run
   - Offers for not creating offer id DietId is non valid
   - Orders:
     - Creating order if DietId is non valid
-    - Validation in end and start date to be valid eg should fail
+    - from_date and to_date should fail if date is not possible
     ```json
     "to_date": "2022-06-31",
     ```
@@ -101,6 +101,10 @@ Open Playwright console an run
     },
     ```
     - Validation for datetime > to_date > from_date
+    - from_date >=1 <= 30 from_date
+    - Orders for more that 30 days
+    all above should be not possible 
+- Typos in _debug "_debug": "end date befre start date?"
     - Consistent debug info about start date;
     ```json
         {
@@ -122,7 +126,3 @@ Open Playwright console an run
         "_debug": "end date befre start date?"
     },
     ```
-    - from_date >=1 <= 30 from_date
-    - Orders for more that 30 days
-    all above should be not possible 
-- Typos in _debug "_debug": "end date befre start date?"
