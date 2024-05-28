@@ -55,3 +55,74 @@ Open Playwright console an run
   ```bash
   npx playwright show-report
   ```
+### 3. After task thoughts
+
+- Data should not be created if data is duplicated example:
+
+```json
+    {
+        "id": "3",
+        "name": "Grima",
+        "email": "grima@dev.dietly.pl",
+        "_debug": "duplicate ID"
+    },
+```
+- Ids would be better if be as UUIDs
+- Should be validation for 
+  - Emails in users so email won't be used twice
+  - Offers for not creating offer id DietId is non valid
+  - Orders:
+    - Creating order if DietId is non valid
+    - Validation in end and start date to be valid eg should fail
+    ```json
+    "to_date": "2022-06-31",
+    ```
+    - from_date should be day after datetime
+    - datetime could have more specific name like "orderTime" "createdOrderTime" "createTime"
+    - Consistent debug info about 7 days remaining 
+    ```json
+        {
+        "id": "1",
+        "datetime": "2022-03-12 12:43:37.000",
+        "from_date": "2022-03-14",
+        "to_date": "2022-03-20",
+        "dietId": 1,
+        "userId": 1,
+        "_debug": "ok, 7 days diet"
+    },
+    {
+        "id": "2",
+        "datetime": "2022-03-15 10:12:23.123",
+        "from_date": "2022-03-21",
+        "to_date": "2022-03-27",
+        "dietId": 1,
+        "userId": 1,
+        "_debug": "ok, another 7 days diet"
+    },
+    ```
+    - Validation for datetime > to_date > from_date
+    - Consistent debug info about start date;
+    ```json
+        {
+        "id": "3",
+        "datetime": "2022-03-15 03:45:23.123",
+        "from_date": "2022-04-07",
+        "to_date": "2022-04-06",
+        "dietId": 1,
+        "userId": 1,
+        "_debug": "-1 days diet?"
+    },
+        {
+        "id": "5",
+        "datetime": "2022-03-03 11:13:24.000",
+        "from_date": "2022-04-02",
+        "to_date": "2022-03-03",
+        "dietId": 2,
+        "userId": 2,
+        "_debug": "end date befre start date?"
+    },
+    ```
+    - from_date >=1 <= 30 from_date
+    - Orders for more that 30 days
+    all above should be not possible 
+- Typos in _debug "_debug": "end date befre start date?"
